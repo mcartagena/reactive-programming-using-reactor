@@ -11,6 +11,11 @@ public class FluxAndMonoGeneratorService {
         return Flux.fromIterable(List.of("alex","ben","chloe"))
                 .log(); // db or remote service call
     }
+    public Flux<String> namesFlux_map(){
+        return Flux.fromIterable(List.of("alex","ben","chloe"))
+                .map(String::toUpperCase)
+                .log(); // db or remote service call
+    }
 
     public Mono<String> nameMono(){
         return Mono.just("alex")
